@@ -8,7 +8,7 @@ RUN apt-get update; apt-get install -y apt-utils git wget vim tree htop unzip py
 # Install Caffe pre-requisites
 RUN apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libhdf5-dev; apt-get install -y --no-install-recommends libboost-all-dev; apt-get install -y libopenblas-base libopenblas-dev libgflags-dev libgoogle-glog-dev liblmdb-dev;
 
-COPY scripts/install.sh /tmp
+COPY scripts/install.sh /tmp/install.sh
 RUN sh /tmp/install.sh; rm -rf /tmp/*
 ENV PYTHONPATH=/usr/local/lib/caffe/python:$PYTHONPATH
 
